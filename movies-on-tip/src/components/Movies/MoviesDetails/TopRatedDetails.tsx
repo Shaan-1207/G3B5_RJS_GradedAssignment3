@@ -17,7 +17,8 @@ const TopRatedDetails = () => {
 
   const [movie, setMovie] = useState<IMovies | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);const [showPreview, setShowPreview] = useState(false); // State variable for preview visibility
+  const [error, setError] = useState<Error | null>(null);
+  const [showPreview, setShowPreview] = useState(false); // State variable for preview visibility
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -54,8 +55,7 @@ const TopRatedDetails = () => {
 
       {!loading && !error && movie && (
         <>
-          <Link to={`/top-rated-movies`}
-          className="rm-us">
+          <Link to={`/top-rated-movies`} className="rm-us">
             <FontAwesomeIcon icon={faArrowLeft} style={{ color: "#081a3a" }} />
             <span className="mx-2">
               <strong>Go Back</strong>
@@ -65,9 +65,12 @@ const TopRatedDetails = () => {
           <Row className="my-4">
             <Col xs={12} lg={4} className="poster-col">
               <div className="poster-container">
-                <Image 
-                className="detail_poster"
-                src={movie.posterurl} alt={movie.title} fluid />
+                <Image
+                  className="detail_poster"
+                  src={movie.posterurl}
+                  alt={movie.title}
+                  fluid
+                />
                 <div className="poster-overlay" onClick={openPreview}>
                   <FontAwesomeIcon icon={faEye} />
                   <span className="preview-text">Preview</span>
@@ -139,9 +142,8 @@ const TopRatedDetails = () => {
                 </Col>
                 <Col md={{ span: 8, offset: 1 }}>{movie.storyline}</Col>
               </Row>
-              </Col>
-            </Row>
-            
+            </Col>
+          </Row>
 
           {/* Preview Component */}
           {showPreview && (

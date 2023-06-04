@@ -61,7 +61,6 @@ const ComingSoon = () => {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-  
 
   return (
     <>
@@ -130,8 +129,8 @@ const ComingSoon = () => {
             )}
           </Row>
 
-           {/* Pagination */}
-           <div className="pagination-container">
+          {/* Pagination */}
+          <div className="pagination-container">
             <PaginationComponent
               currentPage={currentPage}
               totalPages={Math.ceil(filteredMovies.length / moviesPerPage)}

@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons";
 import Rating from "../../utils/Rating/Rating";
 
-
 type Params = {
   id: string;
 };
@@ -54,8 +53,7 @@ const ComingSoonDetails = () => {
 
       {!loading && !error && movie && (
         <>
-          <Link to={`/coming-soon`}
-          className="rm-us">
+          <Link to={`/coming-soon`} className="rm-us">
             <FontAwesomeIcon icon={faArrowLeft} style={{ color: "#081a3a" }} />
             <span className="mx-2">
               <strong>Go Back</strong>
@@ -65,9 +63,12 @@ const ComingSoonDetails = () => {
           <Row className="my-4">
             <Col xs={12} lg={4} className="poster-col">
               <div className="poster-container">
-                <Image 
-                className="detail_poster"
-                src={movie.posterurl} alt={movie.title} fluid />
+                <Image
+                  className="detail_poster"
+                  src={movie.posterurl}
+                  alt={movie.title}
+                  fluid
+                />
                 <div className="poster-overlay" onClick={openPreview}>
                   <FontAwesomeIcon icon={faEye} />
                   <span className="preview-text">Preview</span>
@@ -139,9 +140,8 @@ const ComingSoonDetails = () => {
                 </Col>
                 <Col md={{ span: 8, offset: 1 }}>{movie.storyline}</Col>
               </Row>
-              </Col>
-            </Row>
-            
+            </Col>
+          </Row>
 
           {/* Preview Component */}
           {showPreview && (

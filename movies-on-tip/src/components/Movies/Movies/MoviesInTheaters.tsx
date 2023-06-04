@@ -5,7 +5,7 @@ import { Spinner, Card, Alert, Row, Col, Pagination } from "react-bootstrap";
 import {
   faHeart,
   faMasksTheater,
-  faEye
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import addFavorites from "../../../services/addFavorites";
@@ -35,7 +35,6 @@ const MoviesInTheaters: React.FC = () => {
     fetchMovies();
   }, []);
 
-
   const addFavorite = async (movie: IMovies) => {
     try {
       const response = await addFavorites(movie);
@@ -45,13 +44,9 @@ const MoviesInTheaters: React.FC = () => {
     }
   };
 
-
-
- 
-
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1)
+    setCurrentPage(1);
   };
 
   const filteredMovies = movies.filter((movie: IMovies) =>
@@ -69,7 +64,6 @@ const MoviesInTheaters: React.FC = () => {
     setCurrentPage(pageNumber);
   };
 
-
   return (
     <>
       {/* Search bar */}
@@ -86,11 +80,7 @@ const MoviesInTheaters: React.FC = () => {
       {loading && <Spinner animation="border" size="sm" />}
 
       <span>
-        <FontAwesomeIcon
-          icon={faMasksTheater}
-          className="mx-2"
-          size="sm"
-        />
+        <FontAwesomeIcon icon={faMasksTheater} className="mx-2" size="sm" />
         <strong>Movies in theatre</strong>
       </span>
 
@@ -105,7 +95,6 @@ const MoviesInTheaters: React.FC = () => {
               paginatedMovies.map((movie: IMovies) => (
                 <Col className="my-2 col" key={movie.id}>
                   <Card style={{ textAlign: "center" }}>
-                    
                     <Link
                       to={`/movies-in-theaters/${movie.id}`}
                       className="poster-container"

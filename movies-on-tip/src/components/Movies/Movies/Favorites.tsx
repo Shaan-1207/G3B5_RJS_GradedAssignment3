@@ -15,7 +15,6 @@ const Favorites = () => {
   const [error, setError] = useState<null | Error>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-
   // Set Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 15;
